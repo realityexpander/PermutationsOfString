@@ -11,7 +11,14 @@ function getPermutations(string) {
   // Recursive call: get all possible permutations for all chars except last
   const permutationsOfAllCharsExceptLast = getPermutations(allCharsExceptLast);
 
+  // Put the last char in all possible positions for each of the above permutations
+  const permutations = new Set();
+  permutationsOfAllCharsExceptLast.forEach(permutationOfAllCharsExceptLast => {
+    for (let position = 0; position <= allCharsExceptLast.length; position++) {
+      const permutation = permutationOfAllCharsExceptLast.slice(0, position) + lastChar + permutationOfAllCharsExceptLast.slice(position);
 
+    }
+  });
 
   return permutations;
 }
