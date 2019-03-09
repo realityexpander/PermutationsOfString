@@ -16,7 +16,7 @@ function getPermutations(string) {
   permutationsOfAllCharsExceptLast.forEach(permutationOfAllCharsExceptLast => {
     for (let position = 0; position <= allCharsExceptLast.length; position++) {
       const permutation = permutationOfAllCharsExceptLast.slice(0, position) + lastChar + permutationOfAllCharsExceptLast.slice(position);
-
+      permutations.add(permutation);
     }
   });
 
